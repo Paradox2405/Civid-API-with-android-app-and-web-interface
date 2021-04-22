@@ -12,7 +12,7 @@ import com.budiyev.android.codescanner.CodeScannerView;
 import com.budiyev.android.codescanner.DecodeCallback;
 import com.google.zxing.Result;
 
-public class qrscan extends AppCompatActivity {
+public class QrScan extends AppCompatActivity {
     private CodeScanner mCodeScanner;
 
     @Override
@@ -27,7 +27,7 @@ public class qrscan extends AppCompatActivity {
                 runOnUiThread(new Runnable() {
                     @Override
                     public void run() {
-                        Toast.makeText(qrscan.this, result.getText(), Toast.LENGTH_SHORT).show();
+                        Toast.makeText(QrScan.this, result.getText(), Toast.LENGTH_SHORT).show();
                     }
                 });
             }

@@ -4,6 +4,7 @@ import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -47,10 +48,10 @@ public class LoginActivity extends AppCompatActivity {
 
     private void login() {
         String uName = etUName.getText().toString();
-        String uPass = etUName.getText().toString();
+        String uPass = etPass.getText().toString();
         if (!TextUtils.isEmpty(uName) && !TextUtils.isEmpty(uPass)) {
             dialog.show();
-            AndroidNetworking.post("http://192.168.42.32/Library/Server/User.php")
+            AndroidNetworking.post("http://10.0.2.2/webApi/Server/User.php")
                     .addBodyParameter("action", "login")
                     .addBodyParameter("uname", uName)
                     .addBodyParameter("pass", uPass)
@@ -71,7 +72,7 @@ public class LoginActivity extends AppCompatActivity {
                                         Toast.makeText(getApplicationContext(), user.username, Toast.LENGTH_LONG).show();
                                         Settings s = new Settings(LoginActivity.this);
                                         s.setUser(user.username);
-                                        startActivity(new Intent(LoginActivity.this, SelectionActivity.class));
+                                        startActivity(new Intent(LoginActivity.this, QrScan.class));
                                         finish();
                                     }
                                 } catch (Exception e) {
@@ -84,6 +85,7 @@ public class LoginActivity extends AppCompatActivity {
                         public void onError(ANError anError) {
                             dialog.hide();
                             Toast.makeText(getApplicationContext(), anError.toString(), Toast.LENGTH_LONG).show();
+                            Log.e(null,""+anError);
                         }
                     });
         } else {

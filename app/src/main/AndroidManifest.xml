@@ -16,7 +16,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".qrscan"></activity>
+        <activity android:name=".QrScan"></activity>
         <activity android:name=".DeleteActivity" />
         <activity android:name=".AddActivity"></activity>
         <activity android:name=".SelectionActivity"></activity>
