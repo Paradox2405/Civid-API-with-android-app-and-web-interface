@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">LibraryBookApp</string>
+    <string name="title_activity_login">LoginActivity</string>
+    <string name="choose">Choose</string>
+    <string-array name="cat">
+        <item>Book</item>
+        <item>Newspaper </item>
+        <item>Government publications</item>
+        <item>Ola leaf</item>
+    </string-array>
+
+    <string-array name="rare">
+        <item>Rare</item>
+        <item>Public</item>
+    </string-array>
+</resources>
