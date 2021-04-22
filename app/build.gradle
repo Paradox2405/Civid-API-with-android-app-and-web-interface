@@ -31,4 +31,5 @@ dependencies {
     implementation 'com.amitshekhar.android:jackson-android-networking:1.0.2'
     implementation 'com.facebook.stetho:stetho:1.5.1'
     implementation 'com.budiyev.android:code-scanner:2.1.0'
+    
 }
