@@ -52,11 +52,27 @@
         android:id="@+id/imageView3"
         android:layout_width="233dp"
         android:layout_height="241dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="32dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView"
         app:srcCompat="@drawable/imagem" />
+
+    <TextView
+        android:id="@+id/textView"
+
+        android:layout_width="330dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="4dp"
+        android:gravity="center"
+        android:text="Covid-19 Health Update"
+        android:textColor="#0C090A"
+        android:textSize="25dp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.389"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
