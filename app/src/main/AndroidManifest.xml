@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="com.thils.librarybook">
+    package="com.thils.webApiApp">
 
     <uses-permission android:name="android.permission.CAMERA"/>
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-feature android:name="android.hardware.camera.autofocus" />
 
     <application
-        android:name=".App"
+        android:name="com.thils.webApiApp.App"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -17,9 +17,9 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".QrScan"></activity>
+        <activity android:name="com.thils.webApiApp.QrScan"></activity>
         <activity
-            android:name=".LoginActivity"
+            android:name="com.thils.webApiApp.LoginActivity"
             android:label="LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

@@ -1,12 +1,7 @@
-package com.thils.librarybook;
+package com.thils.webApiApp;
 
-import android.Manifest;
-import android.app.AlertDialog;
 import android.app.ProgressDialog;
-import android.content.DialogInterface;
 import android.content.Intent;
-import android.content.pm.PackageManager;
-import android.os.Build;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.util.Log;
@@ -16,15 +11,13 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.app.ActivityCompat;
-import androidx.core.content.ContextCompat;
 
 import com.androidnetworking.AndroidNetworking;
 import com.androidnetworking.common.Priority;
 import com.androidnetworking.error.ANError;
 import com.androidnetworking.interfaces.JSONArrayRequestListener;
-import com.thils.librarybook.model.User;
-import com.thils.librarybook.util.Settings;
+import com.thils.webApiApp.model.User;
+import com.thils.webApiApp.util.Settings;
 
 import org.json.JSONArray;
 

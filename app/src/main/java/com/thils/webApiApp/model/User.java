@@ -1,4 +1,4 @@
-package com.thils.librarybook.model;
+package com.thils.webApiApp.model;
 
 import org.json.JSONObject;
 

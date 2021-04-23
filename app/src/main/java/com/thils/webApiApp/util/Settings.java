@@ -1,9 +1,9 @@
-package com.thils.librarybook.util;
+package com.thils.webApiApp.util;
 
 import android.content.Context;
 import android.content.SharedPreferences;
 
-import com.thils.librarybook.BuildConfig;
+import com.thils.webApiApp.BuildConfig;
 
 public class Settings {
 

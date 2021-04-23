@@ -1,4 +1,4 @@
-package com.thils.librarybook;
+package com.thils.webApiApp;
 
 import org.junit.Test;
 
