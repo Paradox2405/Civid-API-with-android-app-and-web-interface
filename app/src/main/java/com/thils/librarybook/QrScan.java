@@ -8,16 +8,27 @@ import androidx.core.content.ContextCompat;
 import android.Manifest;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.os.Build;
 import android.os.Bundle;
+import android.text.TextUtils;
+import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
 
+import com.androidnetworking.AndroidNetworking;
+import com.androidnetworking.common.Priority;
+import com.androidnetworking.error.ANError;
+import com.androidnetworking.interfaces.JSONArrayRequestListener;
 import com.budiyev.android.codescanner.CodeScanner;
 import com.budiyev.android.codescanner.CodeScannerView;
 import com.budiyev.android.codescanner.DecodeCallback;
 import com.google.zxing.Result;
+import com.thils.librarybook.model.User;
+import com.thils.librarybook.util.Settings;
+
+import org.json.JSONArray;
 
 public class QrScan extends AppCompatActivity {
     private CodeScanner mCodeScanner;
@@ -39,6 +50,40 @@ public class QrScan extends AppCompatActivity {
                     @Override
                     public void run() {
                         Toast.makeText(QrScan.this, result.getText(), Toast.LENGTH_SHORT).show();
+                        String Qrcode = result.getText();
+                        AndroidNetworking.post("http://10.0.2.2/webApi/Server/User.php")
+                        .addBodyParameter("action", "qrsave")
+                                .addBodyParameter("uname", Qrcode)
+                                .setTag("test")
+                                .setPriority(Priority.HIGH)
+                                .build()
+                                .getAsJSONArray(new JSONArrayRequestListener() {
+                                    @Override
+                                    public void onResponse(JSONArray response) {
+
+                                        if (response.length() > 0) {
+                                            try {
+                                                User user = User.getUser(response.getJSONObject(0));
+                                                if (user.id != null) {
+                                                    //Pass control
+                                                } else {
+                                                   Log.e(null,"error passing data");
+                                                }
+                                            } catch (Exception e) {
+                                                Toast.makeText(getApplicationContext(), "Something wrong", Toast.LENGTH_LONG).show();
+                                            }
+                                        }
+                                    }
+
+                                    @Override
+                                    public void onError(ANError anError) {
+
+                                    }
+
+
+                                });
+
+
                     }
                 });
             }
@@ -103,6 +148,7 @@ public class QrScan extends AppCompatActivity {
                 .create()
                 .show();
     }
+
 
     @Override
     protected void onResume() {

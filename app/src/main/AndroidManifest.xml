@@ -18,9 +18,6 @@
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
         <activity android:name=".QrScan"></activity>
-        <activity android:name=".DeleteActivity" />
-        <activity android:name=".AddActivity"></activity>
-        <activity android:name=".SelectionActivity"></activity>
         <activity
             android:name=".LoginActivity"
             android:label="LoginActivity">
@@ -30,7 +27,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".MainActivity" />
     </application>
 
 </manifest>
